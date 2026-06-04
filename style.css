@@ -1,0 +1,283 @@
+/* Базовые настройки переменных для светлой темы (классическая белая) */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #1a1a1a;
+    --header-bg: #f8f9fa;
+    --border-color: #e0e0e0;
+    --card-hover: #f1f3f5;
+    --accent-color: #000000;
+    --btn-text: #ffffff;
+    --code-bg: #f1f3f5;
+    --transition-speed: 0.3s;
+}
+
+/* Переменные для тёмной темы */
+body.dark-theme {
+    --bg-color: #121212;
+    --text-color: #f5f5f5;
+    --header-bg: #1e1e1e;
+    --border-color: #333333;
+    --card-hover: #2a2a2a;
+    --accent-color: #ffffff;
+    --btn-text: #121212;
+    --code-bg: #2d2d2d;
+}
+
+/* Общие стили сброса */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+    line-height: 1.6;
+}
+
+/* Шапка */
+.header {
+    background-color: var(--header-bg);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    transition: background-color var(--transition-speed), border-color var(--transition-speed);
+}
+
+.header-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.logo {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+/* Кнопка смены темы */
+.theme-btn {
+    background: none;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 8px 12px;
+    font-size: 1.2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all var(--transition-speed);
+}
+
+.theme-btn:hover {
+    background-color: var(--card-hover);
+}
+
+/* Навигация */
+.nav {
+    max-width: 1100px;
+    margin: 10px auto 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 10px 20px;
+}
+
+.nav-link {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: background-color var(--transition-speed);
+}
+
+.nav-link:hover {
+    background-color: var(--header-bg);
+}
+
+/* Контент и секции */
+.main-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.section {
+    padding: 40px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.section:last-child {
+    border-bottom: none;
+}
+
+.section h2 {
+    font-size: 1.7rem;
+    margin-bottom: 8px;
+}
+
+.section-desc {
+    opacity: 0.7;
+    margin-bottom: 25px;
+    font-size: 0.95rem;
+}
+
+/* Таблицы (Расписание и Типы данных) */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+th, td {
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+}
+
+th {
+    background-color: var(--header-bg);
+    font-weight: 600;
+}
+
+.day-cell {
+    font-weight: bold;
+    background-color: var(--header-bg);
+}
+
+code {
+    background-color: var(--code-bg);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+}
+
+/* Адаптивная сетка карточек (Grid) */
+.links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: transform 0.2s, background-color var(--transition-speed);
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    background-color: var(--card-hover);
+}
+
+.card-icon {
+    font-size: 1.8rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.card p {
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+/* Интерактивный блок */
+.interactive-box {
+    margin-top: 30px;
+    background-color: var(--header-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 25px;
+    text-align: center;
+}
+
+.interactive-box h3 {
+    margin-bottom: 10px;
+}
+
+#tip-display {
+    font-style: italic;
+    margin-bottom: 20px;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.action-btn {
+    background-color: var(--accent-color);
+    color: var(--btn-text);
+    border: none;
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.action-btn:hover {
+    opacity: 0.85;
+}
+
+/* Подвал */
+.footer {
+    text-align: center;
+    padding: 30px;
+    font-size: 0.85rem;
+    opacity: 0.6;
+    border-top: 1px solid var(--border-color);
+    background-color: var(--header-bg);
+}
+
+/* Медиа-запросы для адаптивности на смартфонах */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: row;
+        padding: 10px 15px;
+    }
+    
+    .nav {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    
+    .nav-link {
+        font-size: 0.85rem;
+        padding: 5px 10px;
+    }
+    
+    .section {
+        padding: 25px 0;
+    }
+    
+    .section h2 {
+        font-size: 1.4rem;
+    }
+}
